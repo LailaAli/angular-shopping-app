@@ -12,7 +12,12 @@ export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
     // create a 'new' obj by passing in the args from Model
     new Recipe(
-      'Cookies',
+      'COOKIES',
+      'This is simply a test recipe',
+      'https://www.spendwithpennies.com/wp-content/uploads/2017/02/soft-chewy-chocolate-chip-cookies-1-of-1-2.jpg'
+    ),
+    new Recipe(
+      'ICE CREAM',
       'This is simply a test recipe',
       'https://www.spendwithpennies.com/wp-content/uploads/2017/02/soft-chewy-chocolate-chip-cookies-1-of-1-2.jpg'
     ),
