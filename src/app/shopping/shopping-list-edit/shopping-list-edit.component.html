@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <form (submit)='onSubmit()'>
+      <div class="row">
+        <div class="col-xs-8 form-group">
+          <label for="name">Name</label>
+          <input
+            name="name"
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]='nameInputValue'>
+          <div class="col-xs-4 form-group">
+            <label for="amount">Amount</label>
+            <input
+              name="amount"
+              type="number"
+              class="form-control"
+              id="amount"
+              [(ngModel)]='amountInputValue'>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class="col-xs-12">
+          <button class='btn btn-success' type="submit">ADD</button>
+          <button class='btn btn-danger' type="button">DELETE</button>
+          <button class='btn btn-warning' type="button">CLEAR</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
