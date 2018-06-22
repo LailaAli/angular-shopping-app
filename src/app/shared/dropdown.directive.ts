@@ -2,7 +2,7 @@ import { Directive, HostListener, HostBinding } from '@angular/core';
 
 @Directive ({
 
-  // [attribute selector]
+  // [attribute selector] cuz we're going to use this as an attribute.
   selector: '[appDropdown]'
 })
 
@@ -15,6 +15,10 @@ export class DropdownDirective {
   // listen for ('click') execute a function
   @HostListener ('click') toggleOpen() {
     this.isOpen = !this.isOpen;
+  }
+
+  @HostListener ('mouseleave') toggleClosed() {
+    this.isOpen = false;
   }
 
 
