@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Ingredient } from '../../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -8,19 +9,15 @@ import { Ingredient } from '../../shared/ingredient.model';
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10),
-    new Ingredient('Bananas', 5),
+    // new Ingredient('Apples', 5),
+    // new Ingredient('Tomatoes', 10),
+    // new Ingredient('Bananas', 5),
   ];
 
-  receivedItem = new EventEmitter<Ingredient>();
-  constructor() { }
+  // receivedItem = new EventEmitter<Ingredient>();
+  constructor(private shoppingListService: ShoppingListService) { }
 
   ngOnInit() {
+    this.ingredients = this.shoppingListService.getIngredients();
   }
-
-  onReceive(ingredients: Ingredient) {
-    this.ingredients.push(ingredients);
-  }
-
 }
